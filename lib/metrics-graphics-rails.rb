@@ -1,6 +1,7 @@
-require 'metrics-graphics-rails/version'
+require "metrics-graphics-rails/version"
+require 'metrics-graphics-rails/view_helpers'
+require "metrics-graphics-rails/engine" if defined?(::Rails)
 
-module MetricsGraphicsRails
-  class Engine < ::Rails::Engine
-  end
-end
+# require 'metrics-graphics-rails/version'
+# require 'metrics-graphics-rails/view_helpers'
+
