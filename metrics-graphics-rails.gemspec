@@ -13,6 +13,5 @@ Gem::Specification.new do |s|
   s.files = Dir['{lib,vendor}/**/*'] + ["README.md"]
 
   s.add_dependency 'railties', [">= 3.1", "< 5.0"]
-  s.add_dependency 'railties', [">= 3.1", "< 5.0"]
   s.add_dependency 'json'
 end
