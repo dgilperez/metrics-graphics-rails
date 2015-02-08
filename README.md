@@ -9,7 +9,7 @@ The **metrics-graphics-rails** provides metrics-graphics for Rails and the asset
 
 Add this gem to your Gemfile:
 
-    gem 'metrics-graphics-rails', github: 'dgilperez/metrics-graphics-rails'
+    gem 'metrics-graphics-rails'
 
 Add the following directive to your Javascript manifest file (application.js), after the `//= require jquery`:
 
