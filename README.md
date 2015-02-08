@@ -5,10 +5,6 @@ metrics-graphics-rails
 
 The **metrics-graphics-rails** provides metrics-graphics for Rails and the assets pipeline.
 
-## Dependencies
-
-D3.js is a metrics-graphics' dependency, included in this gem by using [d3-rails](https://github.com/iblue/d3-rails) gem.
-
 ## Usage
 
 Add this gem to your Gemfile:
@@ -26,6 +22,10 @@ Add the following directive to your `application.css`:
     */
 
 Enjoy.
+
+## D3 dependency
+
+D3.js is a metrics-graphics' dependency. It will be required automátically by requiring metrics-graphics-rails. If your project already includes D3, you can ``//= require metricsgraphics`` instead to prevent duplicated requires.
 
 ## Versioning
 
