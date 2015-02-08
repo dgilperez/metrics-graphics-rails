@@ -13,7 +13,7 @@ D3.js is a metrics-graphics' dependency, included in this gem by using [d3-rails
 
 Add this gem to your Gemfile:
 
-    gem 'metrics-graphics-rails'
+    gem 'metrics-graphics-rails', github: 'dgilperez/metrics-graphics-rails'
 
 Add the following directive to your Javascript manifest file (application.js), after the `//= require jquery`:
 
