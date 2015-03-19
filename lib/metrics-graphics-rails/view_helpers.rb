@@ -12,11 +12,12 @@ module MetricsGraphicsRails
       description = options.fetch(:description) { '' }
       width       = options.fetch(:width) { 600 }
       height      = options.fetch(:height) { 250 }
+      time_format = options.fetch(:time_format) { '%Y-%m-%d' }
 
       javascript_tag <<-SCRIPT
         var data = #{json_data};
 
-        MG.convert.date(data, 'date', '%Y-%m-%d');
+        MG.convert.date(data, 'date', #{time_format});
 
         MG.data_graphic({
           title: "#{title}",
