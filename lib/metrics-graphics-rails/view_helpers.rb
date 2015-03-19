@@ -17,7 +17,7 @@ module MetricsGraphicsRails
       javascript_tag <<-SCRIPT
         var data = #{json_data};
 
-        MG.convert.date(data, 'date', #{time_format});
+        MG.convert.date(data, 'date', '#{time_format}');
 
         MG.data_graphic({
           title: "#{title}",
