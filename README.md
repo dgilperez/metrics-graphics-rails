@@ -40,14 +40,16 @@ From the [metrics-graphics example](http://metricsgraphicsjs.org/):
         height: 250,
         target: '#downloads',
         x_accessor: 'date',
-        y_accessor: 'value',
+        y_accessor: 'value'
     })
 
 This graph can be rendered in a Rails view template with this helper:
 
-    = metrics_graphic_for data, title: "Downloads", description: "This graphic shows a time-series of downloads.", width: 600, height: 250, target: '#downloads', x_accessor: 'date', y_accessor: 'value'
+    = metrics_graphic_for data, title: "Downloads", description: "This graphic shows a time-series of downloads.", width: 600, height: 250, target: '#downloads', x_accessor: 'date', y_accessor: 'value', time_format: '%Y-%m-%d'
 
 where ``data`` is an Array of Hashes of points with a ``date`` and a ``value`` keys and values. Ex: ``[{date: '2014-11-01', value: 12}, date: '2014-11-02', value: 18}]``
+
+`width`, `height, `time_format` and `description` are optional options. 
 
 ## Versioning
 
