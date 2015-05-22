@@ -49,7 +49,11 @@ This graph can be rendered in a Rails view template with this helper:
 
 where ``data`` is an Array of Hashes of points with a ``date`` and a ``value`` keys and values. Ex: ``[{date: '2014-11-01', value: 12}, {date: '2014-11-02', value: 18}]``
 
-`width`, `height`, `time_format` and `description` are optional options. 
+`width`, `height`, `time_format` and `description` are optional options.
+
+### Multiple lines
+
+`metrics_graphic_for` helper supports multiple-lined graphs generation. Just pass data as an Array of Arrays in the same format as for single-lined graphs and it should work as a charm.
 
 ## Versioning
 

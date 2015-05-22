@@ -1,16 +1,16 @@
 !function() {
   var d3 = {
-    version: "3.5.5"
+    version: "3.5.4"
   };
   var d3_arraySlice = [].slice, d3_array = function(list) {
     return d3_arraySlice.call(list);
   };
   var d3_document = this.document;
   function d3_documentElement(node) {
-    return node && (node.ownerDocument || node.document || node).documentElement;
+    return node && (node.ownerDocument || node.document).documentElement;
   }
   function d3_window(node) {
-    return node && (node.ownerDocument && node.ownerDocument.defaultView || node.document && node || node.defaultView);
+    return node && node.ownerDocument ? node.ownerDocument.defaultView : node;
   }
   if (d3_document) {
     try {
