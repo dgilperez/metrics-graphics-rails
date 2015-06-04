@@ -14,6 +14,8 @@ module MetricsGraphicsRails
       height      = options.fetch(:height)      { 250 }
       time_format = options.fetch(:time_format) { '%Y-%m-%d' }
       is_multiple = data.first.is_a?(Array)
+      extra_options = options[:extra_options] || {}
+      extra_options_to_options = extra_options.map{ |k,v| "#{k}: #{v}," }.join('')
 
       javascript_tag <<-SCRIPT
         var data = #{json_data};
@@ -27,6 +29,7 @@ module MetricsGraphicsRails
           width: #{width},
           height: #{height},
           target: '#{target}',
+          #{extra_options_to_options}
           x_accessor: '#{x_accessor}',
           y_accessor: '#{y_accessor}'
         });
