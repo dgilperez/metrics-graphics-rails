@@ -1,4 +1,4 @@
 module MetricsGraphicsRails
-  VERSION = '2.4.0'
+  VERSION = '2.4.0.2'
 end
 
