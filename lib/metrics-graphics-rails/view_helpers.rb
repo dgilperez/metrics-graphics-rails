@@ -20,7 +20,7 @@ module MetricsGraphicsRails
       javascript_tag <<-SCRIPT
         var data = #{json_data};
 
-        #{convert_data_js(data, time_format, is_multiple)}
+        #{convert_data_js(data, x_accessor, time_format, is_multiple)}
 
         MG.data_graphic({
           title: "#{title}",
@@ -38,18 +38,16 @@ module MetricsGraphicsRails
 
     private
 
-    def convert_data_js(data, time_format, is_multiple)
+    def convert_data_js(data, x_accessor, time_format, is_multiple)
       if is_multiple
         <<-CONVERT
           for (var i = 0; i < data.length; i++) {
-            data[i] = MG.convert.date(data[i], 'date', '#{time_format}');
+            data[i] = MG.convert.date(data[i], '#{x_accessor}', '#{time_format}');
           }
         CONVERT
       else
-        "MG.convert.date(data, 'date', '#{time_format}');"
+        "MG.convert.date(data, '#{x_accessor}', '#{time_format}');"
       end
     end
   end
 end
-
-
