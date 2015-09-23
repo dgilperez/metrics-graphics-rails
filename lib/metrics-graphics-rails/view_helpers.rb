@@ -2,7 +2,6 @@ require 'json'
 
 module MetricsGraphicsRails
   module ViewHelpers
-    # TODO: generalize for extra options
     def metrics_graphic_for(data, options = {})
       @data              = data
       json_data          = data.to_json
@@ -14,6 +13,8 @@ module MetricsGraphicsRails
       width              = options.fetch(:width)       { 600 }
       height             = options.fetch(:height)      { 250 }
       @time_format       = options.fetch(:time_format) { '%Y-%m-%d' }
+      # Markers is an array of hashes with 'date' and 'label' keys
+      @markers           = options.fetch(:markers)     { [] }
       @is_multiple       = data.first.is_a?(Array)
       @extra_options     = options[:extra_options] || {}
 
@@ -21,6 +22,7 @@ module MetricsGraphicsRails
         var data = #{json_data};
 
         #{convert_data_js}
+        #{markers}
 
         MG.data_graphic({
           title: "#{title}",
@@ -30,6 +32,7 @@ module MetricsGraphicsRails
           height: #{height},
           target: '#{@target}',
           #{extra_options_to_options}
+          #{markers_option}
           x_accessor: '#{@x_accessor}',
           y_accessor: '#{@y_accessor}'
         });
@@ -51,6 +54,24 @@ module MetricsGraphicsRails
         CONVERT
       else
         "MG.convert.date(data, '#{@x_accessor}', '#{@time_format}');"
+      end
+    end
+
+    def markers
+      if @markers.present?
+        markers_json = @markers.map do |m|
+          date = m['date']
+          m['date'] = "new Date('#{date}')"
+          m
+        end.to_json
+
+        "var markers = #{markers_json};"
+      end
+    end
+
+    def markers_option
+      if @markers.present?
+        "markers: markers,"
       end
     end
   end
