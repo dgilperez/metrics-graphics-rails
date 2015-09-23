@@ -14,6 +14,7 @@ module MetricsGraphicsRails
       width              = options.fetch(:width)       { 600 }
       height             = options.fetch(:height)      { 250 }
       @time_format       = options.fetch(:time_format) { '%Y-%m-%d' }
+      @tracking_rollover = options.fetch(:tracking_rollover) { false }
       @is_multiple       = data.first.is_a?(Array)
       @extra_options     = options[:extra_options] || {}
 
@@ -28,6 +29,7 @@ module MetricsGraphicsRails
           height: #{height},
           target: '#{@target}',
           #{extra_options_to_options}
+#{tracking_rollover_mouseover}
           x_accessor: '#{@x_accessor}',
           y_accessor: '#{@y_accessor}'
         });
@@ -50,6 +52,16 @@ module MetricsGraphicsRails
       else
         "MG.convert.date(data, '#{@x_accessor}', '#{@time_format}');"
       end
+    end
+
+    def tracking_rollover_mouseover
+      return unless @tracking_rollover
+
+      <<-TRACKING
+          mouseover: function(d, i) {
+            $('#{@target} svg .mg-active-datapoint-container').attr('transform', 'translate(' + event.clientX + ',20)');
+          },
+      TRACKING
     end
   end
 end
