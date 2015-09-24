@@ -22,6 +22,7 @@ module MetricsGraphicsRails
         var data = #{json_data};
 
         #{convert_data_js}
+        
         #{markers}
 
         MG.data_graphic({
@@ -59,15 +60,11 @@ module MetricsGraphicsRails
 
     def markers
       if @markers.present?
-        markers_json = @markers.map do |m|
-            date = m['date']
-            m['date'] = "new Date('#{date}')"
-            m
-          end.to_json.
-          gsub(/\"new\ Date/, 'new Date').
-          gsub(/\'\)\"/, "')")
+        markers_json = @markers.to_json
 
-        "var markers = #{markers_json};"
+        "var markers = #{markers_json};\n\n
+        MG.convert.date(markers, 'date', '%Y-%m-%dT%H:%M:%S.%LZ');"
+
       end
     end
 
