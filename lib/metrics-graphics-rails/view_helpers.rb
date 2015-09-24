@@ -60,10 +60,12 @@ module MetricsGraphicsRails
     def markers
       if @markers.present?
         markers_json = @markers.map do |m|
-          date = m['date']
-          m['date'] = "new Date('#{date}')"
-          m
-        end.to_json
+            date = m['date']
+            m['date'] = "new Date('#{date}')"
+            m
+          end.to_json.
+          gsub(/\"new\ Date/, 'new Date').
+          gsub(/\'\)\"/, "')")
 
         "var markers = #{markers_json};"
       end
