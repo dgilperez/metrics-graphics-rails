@@ -9,7 +9,7 @@ The **metrics-graphics-rails** provides metrics-graphics for Rails and the asset
 
 Add this gem to your Gemfile:
 
-    gem 'metrics-graphics-rails'
+    gem 'metrics-graphics-rails', '~> 2.9'
 
 Add the following directive to your Javascript manifest file (application.js), after the `//= require jquery`:
 
@@ -57,7 +57,7 @@ where ``data`` is an Array of Hashes of points with a ``date`` and a ``value`` k
 
 ## Versioning
 
-metrics-graphics-rails 2.9.0 == metrics-graphics 2.9.0
+metrics-graphics-rails 2.9.1 == metrics-graphics 2.9.1
 
 ## Contributing
 
