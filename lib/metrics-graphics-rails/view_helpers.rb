@@ -37,7 +37,7 @@ module MetricsGraphicsRails
     private
 
     def extra_options_to_options
-      @extra_options.map{ |k,v| "#{k}: #{v}," }.join("\n          ")
+      @extra_options.map{ |k,v| "#{k}: #{v.is_a?(String) ? "'#{v}'" : v }," }.join("\n          ")
     end
 
     def convert_data_js
