@@ -25,7 +25,7 @@ Enjoy.
 
 ## D3 dependency
 
-D3.js is a metrics-graphics' dependency. It will be required automátically by requiring metrics-graphics-rails. If your project already includes D3, you can ``//= require metricsgraphics`` instead to prevent duplicated requires.
+D3.js is a metrics-graphics' dependency. It will be required automatically by requiring metrics-graphics-rails. If your project already includes D3, you can ``//= require metricsgraphics`` instead to prevent duplicated requires.
 
 ## ActionView Graph Helper
 
@@ -57,7 +57,7 @@ where ``data`` is an Array of Hashes of points with a ``date`` and a ``value`` k
 
 ## Versioning
 
-metrics-graphics-rails 2.1.3 == metrics-graphics 2.1.3
+metrics-graphics-rails 2.9.0 == metrics-graphics 2.9.0
 
 ## Contributing
 
