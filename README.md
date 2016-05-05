@@ -57,7 +57,7 @@ where ``data`` is an Array of Hashes of points with a ``date`` and a ``value`` k
 
 ## Versioning
 
-metrics-graphics-rails 2.9.1 == metrics-graphics 2.9.1
+metrics-graphics-rails 2.9.0.2 == metrics-graphics 2.9.0.2
 
 ## Contributing
 
