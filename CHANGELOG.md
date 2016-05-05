@@ -1,3 +1,8 @@
+## 2.9.0.2
+
+* Fixes case when a configuration value is a string and is passed using extra_options.
+* Gem version should track metrics-graphics.js version
+
 ## 2.9.1 (yanked)
 
 * Adds missing require for d3-rails.
