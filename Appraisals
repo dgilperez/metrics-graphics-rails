@@ -5,6 +5,7 @@ end
 appraise "rails-4.0" do
   gem "activemodel", '~> 4.0.0'
   gem 'mime-types', '~> 2.99'
+  gem 'json', '~> 1.8'
 end
 
 appraise "rails-4.1" do
