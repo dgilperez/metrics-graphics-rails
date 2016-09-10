@@ -1,3 +1,8 @@
+## 2.10.1
+
+* Updates metrics-graphics.js version
+* Removes Rails version restriction in gemspec ~ aka Rails 5 support
+
 ## 2.9.0.2
 
 * Fixes case when a configuration value is a string and is passed using extra_options.
