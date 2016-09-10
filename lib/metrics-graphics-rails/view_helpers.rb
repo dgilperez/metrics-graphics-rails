@@ -18,26 +18,25 @@ module MetricsGraphicsRails
       @extra_options     = options[:extra_options] || {}
 
       javascript_tag <<-SCRIPT
-        var data = #{json_data};
-        #{convert_data_js}
-        MG.data_graphic({
-          title: "#{title}",
-          description: "#{description}",
-          data: data,
-          width: #{width},
-          height: #{height},
-          target: '#{@target}',
-          #{extra_options_to_options}
-          x_accessor: '#{@x_accessor}',
-          y_accessor: '#{@y_accessor}'
-        });
-      SCRIPT
+var data = #{json_data};
+#{convert_data_js}
+MG.data_graphic({
+  title: "#{title}",
+  description: "#{description}",
+  data: data,
+  width: #{width},
+  height: #{height},
+  target: '#{@target}',#{extra_options_to_options}
+  x_accessor: '#{@x_accessor}',
+  y_accessor: '#{@y_accessor}'
+});
+SCRIPT
     end
 
     private
 
     def extra_options_to_options
-      @extra_options.map{ |k,v| "#{k}: #{v.is_a?(String) ? "'#{v}'" : v }," }.join("\n          ")
+      @extra_options.map{ |k,v| "#{k}: #{v.is_a?(String) ? "'#{v}'" : v }," }.join("\n  ")
     end
 
     def convert_data_js
