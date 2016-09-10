@@ -72,7 +72,7 @@ describe MetricsGraphicsRails::ViewHelpers, type: :helper do
 end
 
 def basic_script_tag
-  result =     <<-SCRIPT
+  result = <<-SCRIPT
 <script>
 //<![CDATA[
 var data = [{"date":"2014-11-01","value":12},{"date":"2014-11-02","value":18}];
