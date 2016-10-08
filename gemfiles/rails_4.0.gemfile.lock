@@ -1,8 +1,7 @@
 PATH
   remote: ../
   specs:
-    metrics-graphics-rails (2.10.1)
-      appraisal
+    metrics-graphics-rails (2.10.1.1)
       d3-rails (~> 3.5)
       json (>= 1.8.3)
       railties (>= 3.1)
@@ -98,6 +97,7 @@ PLATFORMS
 
 DEPENDENCIES
   activemodel (~> 4.0.0)
+  appraisal
   json (~> 1.8)
   metrics-graphics-rails!
   mime-types (~> 2.99)
@@ -105,4 +105,4 @@ DEPENDENCIES
   rspec
 
 BUNDLED WITH
-   1.13.0
+   1.13.2

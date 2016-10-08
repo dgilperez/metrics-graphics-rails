@@ -1,3 +1,7 @@
+## 2.10.1.1
+
+* Appraisal should be a development dependency
+
 ## 2.10.1
 
 * Updates metrics-graphics.js version
