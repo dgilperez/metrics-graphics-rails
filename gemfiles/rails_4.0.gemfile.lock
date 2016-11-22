@@ -1,8 +1,8 @@
 PATH
   remote: ../
   specs:
-    metrics-graphics-rails (2.10.1.1)
-      d3-rails (~> 3.5)
+    metrics-graphics-rails (2.10.1.2)
+      d3-rails (>= 4.3)
       json (>= 1.8.3)
       railties (>= 3.1)
 
@@ -40,7 +40,7 @@ GEM
     arel (4.0.2)
     builder (3.1.4)
     concurrent-ruby (1.0.2)
-    d3-rails (3.5.17)
+    d3-rails (4.3.0)
       railties (>= 3.1)
     diff-lcs (1.2.5)
     erubis (2.7.0)
