@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.files = Dir['{lib,vendor}/**/*'] + ["README.md"]
 
   s.add_dependency 'railties', '>= 3.1'
-  s.add_dependency 'd3-rails', '~> 3.5'
+  s.add_dependency 'd3-rails', '>= 4.3'
   s.add_dependency 'json', '>= 1.8.3'
 
   s.add_development_dependency 'rails', '>= 3.1'
