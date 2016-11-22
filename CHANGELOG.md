@@ -1,3 +1,7 @@
+## 2.10.1.2
+
+* Bumps d3 dependency ~ thanks to @X1ting
+
 ## 2.10.1.1
 
 * Appraisal should be a development dependency
